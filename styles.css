@@ -1,0 +1,329 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #121212, #1f1f1f);
+    color: #ffffff;
+    line-height: 1.6;
+    overflow-x: hidden;
+    transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+    animation: fadeIn 1s ease-in-out; /* Fade-in animation on refresh */
+}
+
+body.light-theme {
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    color: #212529;
+    animation: fadeIn 1s ease-in-out;
+}
+
+input, select, button {
+    padding: 0.8em;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+}
+
+body.light-theme input, 
+body.light-theme select, 
+body.light-theme button {
+    background: #ffffff;
+    color: #212529;
+    border: 1px solid #ced4da;
+}
+
+input:focus, select:focus, button:focus {
+    border-color: #f4a261;
+    box-shadow: 0px 4px 10px rgba(244, 162, 97, 0.5);
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em 2em;
+    background: rgba(30, 30, 30, 0.9);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    animation: fadeInDown 1s ease-in-out; /* Header slide-in animation */
+}
+
+body.light-theme .header {
+    background: rgba(248, 249, 250, 0.9);
+    border-bottom: 1px solid #dee2e6;
+}
+
+.logo {
+    font-size: 1.8em;
+    color: #f4a261;
+    font-weight: bold;
+}
+
+body.light-theme .logo {
+    color: #e76f51;
+}
+
+.navbar {
+    display: flex;
+    gap: 1.5em;
+}
+
+.nav-link {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1em;
+    padding: 0.5em 0;
+    position: relative;
+    transition: color 0.3s ease-in-out;
+}
+
+body.light-theme .nav-link {
+    color: #343a40;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: #f4a261;
+}
+
+.nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #f4a261;
+}
+
+/* Responsive Navigation */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 0.3em;
+    cursor: pointer;
+}
+
+.hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: #ffffff;
+    transition: background 0.3s ease-in-out;
+}
+
+body.light-theme .hamburger span {
+    background: #343a40;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        display: none;
+        flex-direction: column;
+        background: rgba(30, 30, 30, 0.95);
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 100%;
+        padding: 1em;
+    }
+
+    body.light-theme .navbar {
+        background: rgba(248, 249, 250, 0.95);
+    }
+
+    .navbar.show {
+        display: flex;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 3em 1em;
+    background: linear-gradient(135deg, #f4a261, #e76f51);
+    color: #121212;
+    transition: background 0.3s ease-in-out;
+    animation: fadeInUp 1.5s ease-in-out; /* Smooth upward appearance */
+}
+
+body.light-theme .hero {
+    background: linear-gradient(135deg, #ffe8d6, #faedcd);
+    color: #343a40;
+}
+
+.hero h2 {
+    font-size: 2.5em;
+    margin-bottom: 0.5em;
+}
+
+.hero p {
+    font-size: 1.2em;
+    margin-bottom: 1.5em;
+}
+
+.cta-btn {
+    background: #121212;
+    color: #f4a261;
+    padding: 0.8em 2em;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background 0.3s, transform 0.2s ease-in-out;
+}
+
+body.light-theme .cta-btn {
+    background: #f4a261;
+    color: #ffffff;
+}
+
+.cta-btn:hover {
+    background: #1f1f1f;
+    transform: scale(1.05);
+}
+
+body.light-theme .cta-btn:hover {
+    background: #e76f51;
+}
+
+/* Sections */
+.section {
+    padding: 2em 1em;
+    max-width: 1200px;
+    margin: 2em auto;
+}
+
+/* Form */
+.form {
+    display: grid;
+    gap: 1em;
+    background: #1e1e1e;
+    padding: 2em;
+    border-radius: 10px;
+    transition: background 0.3s ease-in-out;
+    animation: fadeIn 1s ease-in-out; /* Form appearance on load */
+}
+
+body.light-theme .form {
+    background: #ffffff;
+    border: 1px solid #dee2e6;
+}
+
+/* Search Bar */
+.search-bar {
+    text-align: center;
+    padding: 1em;
+    background: #1e1e1e;
+}
+
+body.light-theme .search-bar {
+    background: #f8f9fa;
+    color: #212529;
+}
+
+#search-bar {
+    width: 50%;
+    padding: 0.8em;
+    border-radius: 5px;
+    border: 2px solid #f4a261;
+    background: #121212;
+    color: #ffffff;
+}
+
+body.light-theme #search-bar {
+    background: #ffffff;
+    color: #343a40;
+    border: 2px solid #ced4da;
+}
+
+/* Library Grid */
+.book-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1em;
+}
+
+.book-card {
+    background: #1e1e1e;
+    border-radius: 10px;
+    padding: 1em;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+body.light-theme .book-card {
+    background: #ffffff;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.book-card img {
+    width: 100px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 1em;
+}
+
+.book-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.7);
+}
+
+body.light-theme .book-card:hover {
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 1em;
+    background: rgba(30, 30, 30, 0.9);
+    color: #ffffff;
+    animation: fadeIn 1s ease-in-out; /* Footer fades in on refresh */
+}
+
+body.light-theme .footer {
+    background: rgba(248, 249, 250, 0.9);
+    color: #343a40;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

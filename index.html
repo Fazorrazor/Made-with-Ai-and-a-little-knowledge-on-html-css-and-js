@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Personal Library</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <div id="dynamic-bg"></div>
+    <!-- Header -->
+    <header class="header">
+        <h1 class="logo">📚 Smart Library</h1>
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <nav class="navbar" id="navbar">
+            <a href="#library" class="nav-link">My Library</a>
+            <a href="#add-book" class="nav-link">Add Book</a>
+            <a href="#stats" class="nav-link">Stats</a>
+            <a href="#community" class="nav-link">Community</a>
+        </nav>
+        <button id="theme-toggle" class="btn">Switch Theme</button>
+    </header>
+    <!-- Hero Section -->
+    <section class="hero">
+        <h2>Welcome to Your Personalized Library!</h2>
+        <p>Track your books, earn badges, and explore recommendations.</p>
+        <a href="#add-book" class="cta-btn">Start Adding Books</a>
+    </section>
+    <!-- Add Book Section -->
+    <section id="add-book" class="section">
+        <h2>Add a New Book</h2>
+        <form id="book-form" class="form">
+            <label for="book-image">Upload Cover</label>
+            <input type="file" id="book-image" accept="image/*">
+            <label for="book-title">Book Title</label>
+            <input type="text" id="book-title" placeholder="Enter book title" required>
+            <label for="book-author">Author</label>
+            <input type="text" id="book-author" placeholder="Enter author name" required>
+            <label for="book-genre">Genre</label>
+            <select id="book-genre">
+                <option value="Fiction">Fiction</option>
+                <option value="Non-Fiction">Non-Fiction</option>
+                <option value="Fantasy">Fantasy</option>
+                <option value="Sci-Fi">Sci-Fi</option>
+                <option value="Biography">Biography</option>
+            </select>
+            <button type="submit" class="btn">Add Book</button>
+        </form>
+    </section>
+    <!-- Search Bar -->
+    <section class="search-bar">
+        <input type="text" id="search-bar" placeholder="Search by title or author">
+    </section>
+    <!-- Library Section -->
+    <section id="library" class="section">
+        <h2>Your Library</h2>
+        <div id="book-grid" class="book-grid"></div>
+        <div id="pagination"></div>
+    </section>
+    <!-- Stats Section -->
+    <section id="stats" class="section">
+        <h2>Reading Stats</h2>
+        <canvas id="stats-chart"></canvas>
+    </section>
+    <!-- Community Section -->
+    <section id="community" class="section">
+        <h2>Community Recommendations</h2>
+        <div id="recommendations"></div>
+    </section>
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 Smart Personal Library</p>
+    </footer>
+</body>
+</html>
